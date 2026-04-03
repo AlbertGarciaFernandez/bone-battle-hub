@@ -75,7 +75,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[100svh] flex flex-col justify-center pt-24 pb-12 px-6 md:px-12 lg:px-20 overflow-hidden"
+      className="relative min-h-[100svh] flex flex-col justify-center pt-16 sm:pt-24 pb-12 px-4 sm:px-6 md:px-12 lg:px-20 overflow-hidden"
     >
       {/* ── Background ── */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
@@ -101,7 +101,7 @@ export default function Hero() {
       </div>
 
       {/* ── Main content ── */}
-      <div ref={containerRef} className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-center gap-16">
+      <div ref={containerRef} className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-center gap-8 sm:gap-16">
 
         {/* Text block — CENTER aligned */}
         <div className="max-w-4xl flex flex-col items-center text-center">
@@ -146,7 +146,7 @@ export default function Hero() {
         </div>
 
         {/* ── 3 CTA Panels ── */}
-        <div className="hero-animate flex flex-col sm:flex-row items-end gap-6 w-full max-w-6xl">
+        <div className="hero-animate flex flex-col sm:flex-row sm:items-end gap-4 sm:gap-6 w-full max-w-6xl">
           {ctaCards.map((card) => (
             <a
               key={card.id}
@@ -154,7 +154,7 @@ export default function Hero() {
               className={`group relative rounded-2xl flex flex-col transition-all duration-500`}
               style={{
                 flex: card.highlight ? "1.2" : "1",
-                height: card.highlight ? "clamp(450px, 45vw, 550px)" : "clamp(400px, 40vw, 480px)",
+                height: card.highlight ? "clamp(220px, 45vw, 550px)" : "clamp(200px, 40vw, 480px)",
                 background: `#0D0D0D`,
                 border: `1px solid rgba(255,255,255,0.08)`,
               }}
@@ -171,9 +171,11 @@ export default function Hero() {
                 t.style.transform   = "translateY(0)";
               }}
             >
-              {/* Top Accent Icon */}
+              {/* Accent Icon — top center on sm+, left side on mobile */}
               <div
-                className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center border-2"
+                className="absolute z-20 w-12 h-12 rounded-full flex items-center justify-center border-2
+                  top-4 left-4 -translate-x-0 -translate-y-0
+                  sm:top-0 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2"
                 style={{ background: "#0A0A0A", borderColor: card.accent, color: card.accent, boxShadow: `0 0 20px ${card.accent}44` }}
               >
                 {card.icon}
@@ -190,7 +192,7 @@ export default function Hero() {
               </div>
 
               {/* Content area */}
-              <div className="relative z-10 px-8 pb-10 pt-4 text-center flex flex-col items-center gap-4">
+              <div className="relative z-10 px-4 sm:px-8 pb-6 sm:pb-10 pt-3 sm:pt-4 text-center flex flex-col items-center gap-2 sm:gap-4">
                 <h3
                   className="text-white text-2xl tracking-wide uppercase"
                   style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 700 }}
@@ -208,7 +210,7 @@ export default function Hero() {
                 </p>
 
                 <div
-                  className="mt-6 flex items-center gap-2 text-xs font-bold tracking-widest uppercase transition-colors"
+                  className="mt-2 sm:mt-6 flex items-center gap-2 text-xs font-bold tracking-widest uppercase transition-colors"
                   style={{ color: "#ffffff", opacity: 0.5 }}
                 >
                   ENTER
